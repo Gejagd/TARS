@@ -1,0 +1,18 @@
+# environtment
+**/*env*/
+
+# cache
+**/*cache*/
+
+# dotnet
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# packages & test results
+packages/
+TestResults/
+coverage*/
+*.coverage
+*.coveragexml
