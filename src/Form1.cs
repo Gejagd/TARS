@@ -49,6 +49,34 @@ namespace TARS {
             }
         }
         
+        // Moving Average Setup
+        const int WindowValue = 10;
+        Queue<float> bufferTemp = new Queue<float>();
+        Queue<float> bufferHum = new Queue<float>();
+
+        bool DataValid(float temp, float hum) {
+            if (float.IsNaN(temp) || float.IsNaN(hum)) {
+                return false;
+            } else if (temp < 0f || temp > 50f) {
+                return false;
+            } else if (hum < 20f || hum > 90f) {
+                return false;
+            }
+            return true;
+        }
+
+        float MovingAVG(Queue<float> buffer, float newValue) {
+            buffer.Enqueue(newValue);
+            if (buffer.Count > WindowValue) {
+                buffer.Dequeue();
+            }
+            float total = 0f;
+            foreach (float v in buffer) {
+                total += v;
+            }
+            return total / buffer.Count;
+        }
+        
         private void SerialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e) {
             if (!isReading) {
                 return;
@@ -94,8 +122,16 @@ namespace TARS {
                         return;
                     }
 
-                    textBox2.Text = temp.ToString();
-                    textBox3.Text = hum.ToString();
+                    if (!DataValid(temp, hum)) {
+                        richTextBox1.AppendText("Data out of threshold ranges!\n");
+                        return;
+                    }
+
+                    float tempAVG = MovingAVG(bufferTemp, temp);
+                    float humAVG = MovingAVG(bufferHum, hum);
+
+                    textBox2.Text = tempAVG.ToString();
+                    textBox3.Text = humAVG.ToString();
                     textBox4.Text = tempTolerance.ToString();
                     textBox5.Text = humTolerance.ToString();
 
