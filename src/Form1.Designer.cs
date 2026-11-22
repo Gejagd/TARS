@@ -65,8 +65,8 @@ namespace TARS
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(402, 377);
             this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // label1
             // 
@@ -92,9 +92,9 @@ namespace TARS
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(39, 154);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 20);
+            this.label3.Size = new System.Drawing.Size(92, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "STATUS";
+            this.label3.Text = "LED Status";
             this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // comboBox1
@@ -115,9 +115,9 @@ namespace TARS
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(186, 151);
+            this.textBox1.Location = new System.Drawing.Point(208, 151);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(218, 26);
+            this.textBox1.Size = new System.Drawing.Size(196, 26);
             this.textBox1.TabIndex = 7;
             // 
             // button2
@@ -142,9 +142,9 @@ namespace TARS
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(186, 201);
+            this.textBox2.Location = new System.Drawing.Point(208, 201);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(218, 26);
+            this.textBox2.Size = new System.Drawing.Size(196, 26);
             this.textBox2.TabIndex = 10;
             // 
             // label4
@@ -152,16 +152,16 @@ namespace TARS
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(39, 204);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 20);
+            this.label4.Size = new System.Drawing.Size(149, 20);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Temperature";
+            this.label4.Text = "Temperature (AVG)";
             this.label4.Click += new System.EventHandler(this.Label4_Click);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(186, 256);
+            this.textBox3.Location = new System.Drawing.Point(208, 256);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(218, 26);
+            this.textBox3.Size = new System.Drawing.Size(196, 26);
             this.textBox3.TabIndex = 12;
             // 
             // label5
@@ -169,9 +169,9 @@ namespace TARS
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(39, 259);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 20);
+            this.label5.Size = new System.Drawing.Size(119, 20);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Humidity";
+            this.label5.Text = "Humidity (AVG)";
             this.label5.Click += new System.EventHandler(this.Label5_Click);
             // 
             // textBox4
